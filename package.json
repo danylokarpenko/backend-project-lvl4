@@ -1,0 +1,23 @@
+{
+  "name": "backend-project-lvl4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danylokarpenko/backend-project-lvl4.git"
+  },
+  "keywords": [
+    "task",
+    "manager"
+  ],
+  "author": "Danylo Karpenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danylokarpenko/backend-project-lvl4/issues"
+  },
+  "homepage": "https://github.com/danylokarpenko/backend-project-lvl4#readme"
+}
