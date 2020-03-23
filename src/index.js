@@ -27,6 +27,7 @@ export default () => {
 
   app.use(async (ctx, next) => {
     ctx.body = 'Dark power!!';
+    console.log(ctx.path);
     await next();
   })
   return app;
