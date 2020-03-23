@@ -2,7 +2,7 @@
   "name": "backend-project-lvl4",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/bin/server.js",
+  "main": "index.js",
   "bin": {
     "task-manager": "./dist/bin/server.js"
   },
@@ -10,7 +10,8 @@
     "test": "test",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
-    "start": "node ./src/bin/server.js"
+    "server": "nodemon --exec babel-node ./src/bin/server.js",
+    "start": "babel-node ./src/bin/server.js"
   },
   "repository": {
     "type": "git",
