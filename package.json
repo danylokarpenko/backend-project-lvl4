@@ -12,7 +12,8 @@
     "postinstall": "npm run build",
     "prepublishOnly": "npm run build",
     "server": "nodemon --exec babel-node ./src/bin/server.js",
-    "start": "npm run build && node dist/app.js"
+    "heroku-postbuild": "npm install",
+    "start": "babel-node server.js"
   },
   "repository": {
     "type": "git",
