@@ -25,8 +25,7 @@ export default () => {
   })
 
   app.use(async (ctx, next) => {
-    ctwx.body = 'Big zopa!!!!!!!!!!';
-    throw new Error('Big zopa')
+    ctwx.body = 'Dark power';
     await next();
   })
 
