@@ -2,7 +2,10 @@
   "name": "backend-project-lvl4",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/bin/server.js",
+  "bin": {
+    "task-manager": "./dist/bin/server.js"
+  },
   "scripts": {
     "test": "test",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
