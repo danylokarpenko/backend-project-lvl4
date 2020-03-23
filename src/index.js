@@ -25,7 +25,7 @@ export default () => {
   })
 
   app.use(async (ctx, next) => {
-    ctwx.body = 'Dark power';
+    ctx.body = 'Dark power';
     await next();
   })
 
