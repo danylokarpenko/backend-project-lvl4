@@ -10,7 +10,7 @@
     "test": "test",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
-    "start": "nodemon --exec babel-node ./src/bin/server.js"
+    "start": "node ./src/bin/server.js"
   },
   "repository": {
     "type": "git",
