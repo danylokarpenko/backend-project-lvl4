@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "task-manager": "./dist/bin/server.js"
+  },
   "scripts": {
     "test": "test",
     "start": "gulp server",
@@ -24,8 +27,7 @@
   "homepage": "https://github.com/danylokarpenko/backend-project-lvl4#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "koa-router": "^8.0.8",
-    "rollbar": "^2.15.0"
+    "koa-router": "^8.0.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -42,6 +44,7 @@
     "koa-pug": "^4.0.3",
     "nodemon": "^2.0.2",
     "pug": "^2.0.4",
-    "pug-lint": "^2.6.0"
+    "pug-lint": "^2.6.0",
+    "rollbar": "^2.15.0"
   }
 }
