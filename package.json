@@ -10,7 +10,7 @@
     "test": "test",
     "start": "gulp server",
     "server": "nodemon --exec gulp server",
-    "build": "npx webpack",
+    "build": "npx webpack -p  --env production",
     "postinstall": "npm run build"
   },
   "repository": {
