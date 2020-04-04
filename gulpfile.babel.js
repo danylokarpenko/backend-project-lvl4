@@ -1,6 +1,6 @@
-import gulp from 'gulp';
-import container from './container';
-import getServer from './';
+const gulp = require('gulp');
+const container = require('./container');
+const getServer = require('./');
 
 gulp.task('console', () => {
   const replServer = repl.start({
