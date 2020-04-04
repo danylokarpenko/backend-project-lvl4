@@ -2,6 +2,7 @@ import Koa from 'koa';
 import Pug from 'koa-pug';
 import Router from 'koa-router';
 import Rollbar from 'rollbar';
+import serve from 'koa-static';
 
 import path from 'path';
 
@@ -23,7 +24,7 @@ export default () => {
     helperPath: [
       { _: require('lodash') }
     ],
-    app: app // Binding `ctx.render()`, equals to pug.use(app)
+    // app: app // Binding `ctx.render()`, equals to pug.use(app)
   });
   app.use(async (ctx, next) => {
     try {
@@ -32,7 +33,8 @@ export default () => {
       rollbar.error(error, ctx.request)
     }
   });
-  app.use
+  app.use(serve(path.resolve(__dirname, 'public')));
+  pug.use(app);
   addRoutes(router, container);
   app
     .use(router.routes())
