@@ -1,0 +1,8 @@
+extends ./index.pug
+
+block account
+  h3 Profile
+  +formFor(f, { url: '/users?_method=patch', method: 'post' })
+    +input(f, 'firstName', { type: 'firstName' })
+    +input(f, 'lastName', { type: 'lastName' })
+    +button(f, { type: "submit", body: "Save changes" })

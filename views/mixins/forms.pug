@@ -1,0 +1,25 @@
+- const getInputName = (f, property) => `${property}`
+
+mixin formAlerts(flashMessage)
+  - const messages = flashMessage && flashMessage.messages
+  if (messages)
+    - const messageKeys = _.keys(messages)
+    each messageKey in messageKeys
+      .alert.mb-0(class=`alert-${messageKey}`)= messages[messageKey]
+
+mixin formFor(f, options = {})
+  - const url = _.get(options, 'url');
+  - const method = _.get(options, 'method', 'get').toLowerCase();
+  form(action= url method= method)
+    block
+
+mixin input(f, property, options = { type: 'text'})
+  - const value = f.object[property] === undefined ? '' : f.object[property]
+  .form-group.required(class=`${property}` class=(f.errors[property] && 'form-group-invalid'))
+    input.form-control.required(value=value class=`${property}` class=(f.errors[property] &&'is-invalid') name= getInputName(f, property) placeholder=`${property}` type=options['type'])
+    if f.errors[property]
+      .form-control-feedback.text-left.text-danger.pl-1= f.errors[property].map(({ message }) => message).join('. ')
+
+mixin button(f, options = { type: "submit", body: "Submit"})
+  .form-group
+    button.btn.btn-lg.btn-primary.btn-block(type=`${options.type}` value="Save")= options.body

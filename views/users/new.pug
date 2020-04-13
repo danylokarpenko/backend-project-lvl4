@@ -1,0 +1,19 @@
+extends ../layouts/application.pug
+
+block content
+  div.container
+    div.row.justify-content-center.pb-5.mt-5.text-center
+      div.col-12.col-sm-8.col-md-7.col-lg-4
+        div.card.shadow.mb-5
+          div.card.p-4
+            +formFor(f, { url: '/users', method: 'post' })
+              h1.h3.mb-3.font-weight-normal Please sing up
+              +input(f, 'email', { type: 'email' })
+              +input(f, 'firstName', { type: 'firstName' })
+              +input(f, 'lastName', { type: 'lastName' })
+              +input(f, 'password', { type: 'password' })
+              +button(f, { type: "submit", body: "Sing up" })
+          div.card.p-4
+            span.font-weight-bold.justify-content-center
+              p.font-weight-light.mr-2.d-inline-block Already have account?
+              a.font-weight-bolder.btn-link(href='/users/new') Sing in

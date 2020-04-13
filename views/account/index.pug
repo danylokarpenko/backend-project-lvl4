@@ -1,0 +1,15 @@
+extends ../layouts/application.pug
+
+block content
+  .container.my-5
+    .row
+      .col-4.col-lg-4
+        div.card.shadow.mb-5
+          .card-header.font-weight-normal.text-muted
+          .list-group
+            .list-item
+              a.nav-link.list-group-item.list-group-item-action(href='/account/profile') Profile
+            .list-item
+              a.nav-link.list-group-item.list-group-item-action(href='/account/setting') Setting
+      .col-8.col-lg-8
+        block account

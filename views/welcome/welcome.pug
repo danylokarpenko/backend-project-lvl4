@@ -1,0 +1,21 @@
+extends ../layouts/application.pug
+
+block content
+  main.main
+    div.jumbotron
+      div.container
+        h1.display-3 Task Manager
+        p= "Issue Tracking, Project Management, Version Control, Help Desk, File Sync"
+        p
+          a.btn.btn-primary.btn-lg(href="/users/new" role="button") Quick start
+    div.container
+      div.row
+        div.col-md-4
+          h2 Track  Issues
+          p= "Tracking issues, tasks and bugs is core to TaskManager. That means you can configure exactly the information tracked in each issue."
+        div.col-md-4
+          h2 Share the Knowledge
+          p= "Perfect community for personal development and sharing your knowledge to others."
+        div.col-md-4
+          h2 Work from Anywhere at Anytime
+          p= "Whether you’re living on a tropical island off the coast of Indonesia or just working from bed for a morning, you’ll have full access to Task Manager"

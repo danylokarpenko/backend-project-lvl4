@@ -1,0 +1,15 @@
+extends ./index.pug
+
+block account
+  h3 Profile setting
+  .mx-1.mb-1
+    label.string.optional Change email
+    +formFor(f, { url: '/users?_method=patch', method: 'post' })
+      +input(f, 'email', { type: 'email' })
+      +button(f, { type: "submit", body: "Save changes" })
+  .mx-1.mb-1
+    label.string.optional Change password
+    +formFor(f, { url: '/users?_method=patch', method: 'post' })
+      label.font-weight-normal Input new password
+      +input(f, 'newPassword', { type: 'password' })
+      +button(f, { type: "submit", body: "Save changes" })

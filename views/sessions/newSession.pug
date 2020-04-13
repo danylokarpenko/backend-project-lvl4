@@ -1,0 +1,17 @@
+extends ../layouts/application.pug
+
+block content
+  div.container
+    div.row.justify-content-center.pb-5.mt-5.text-center
+      div.col-12.col-sm-8.col-md-7.col-lg-4
+        div.card.shadow.mb-5
+          div.card.p-4
+            +formFor(f, { url: '/session', method: 'post' })
+              h1.h3.mb-3.font-weight-normal Please sing in
+              +input(f, 'email', { type: "email" })
+              +input(f, 'password', { type: "password" })
+              +button(f, { type: "submit", body: "Sing in" })
+          div.card.p-4
+            span.font-weight-bold.text-right
+              p.font-weight-light.mr-2.d-inline-block Haven't account yet? 0_o =>
+              a.font-weight-bolder.btn-link(href='/users/new') Registration

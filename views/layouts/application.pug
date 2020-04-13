@@ -1,0 +1,28 @@
+include ../mixins/forms.pug
+
+doctype html
+html(lang="en")
+  head
+    title= 'TaskManager'
+    script(src='/assets/main.js')
+  body
+    div.d-flex.flex-column.flex-md-row.align-items-center.p-3.bg-light.border-bottom.shadow-sm
+      h5.my-0.mr-md-auto.font-weight-normal Task Manager
+      nav.my-2.my-md-0.mr-md-3
+        a.p-2.nav-item.text-dark(href="/") Home
+        a.p-2.nav-item.text-dark(href="/users") Users
+        a.p-2.nav-item.text-dark(href='#') Tasks
+
+      if isSingedIn()
+        a.p-2.nav-item.text-dark(href='/account/profile') Setings
+        +formFor(f, { url:'/session?_method=delete', method: 'post'})
+          input.btn.btn-outline-primary.mx-2(type='submit' value='Sing out')
+
+      else
+        a.btn.btn-outline-primary.mx-2(href='/session') Sing in
+        a.btn.btn-outline-primary.mx-2(href='/users/new') Sing up
+    .container
+      - const msg = flash.get()
+        if msg
+          .alert.mb-0(class=`alert-${msg.type}`)= msg.msg
+    block content
